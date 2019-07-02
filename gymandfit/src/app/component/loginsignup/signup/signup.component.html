@@ -11,7 +11,7 @@
 <body>
     <div class="background" style=" background-image: url('./../../assets/img/bg-01.jpg');">
         <div class="wrap-login100">
-            <form [formGroup]="form">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
 
                 <img src="../../../../assets/img/img/user_128x117.png" class="logo">
@@ -20,12 +20,12 @@
                 <br>
                 <div class="content-detail">
                     <div class="column-left">
-                        <p *ngIf="(!form.controls['name'].valid) && (form.controls['name'].touched)">*{{titleAlert}}</p>
+                        <p *ngIf="submitted && (!form.controls['name'].valid) && (form.controls['name'].touched)">*{{titleAlert}}</p>
                         <div class="column">
                             <label style="font-size: 20px">Họ tên <label style="color: red; " >*</label></label>
                             <span><input type="text" #name formControlName="name"></span>
                         </div><br>
-                        <p *ngIf="(!form.controls['birthday'].valid) && (form.controls['birthday'].touched)">
+                        <p *ngIf="submitted &&  (!form.controls['birthday'].valid) && (form.controls['birthday'].touched)">
                             <div class="column">
                                 <label style="font-size: 20px">Ngày sinh <label style="color: red">*</label></label>
                                 <span><input type="date" #birthday formControlName="birthday" ></span>
@@ -33,14 +33,14 @@
                             <div class="column">
                                 <label style="font-size: 20px;">Giới tính</label>
                                 <span>
-                                            <select name="gender" id="" #gender style="font-size: 15px;">
+                                            <select name="gender" id=" gender" style="font-size: 20px;">
                                                 <option value="1">Nam</option>
                                                 <option value="0">Nữ</option>
                                                 <option value="">Khác</option>
                                             </select>
                                         </span>
                             </div><br>
-                            <p *ngIf="form.controls.phone.invalid && (form.controls.phone.touched)">*Số điện thoại phải từ 10 hoặc 11 số</p>
+                            <p *ngIf="submitted &&  form.controls.phone.invalid && (form.controls.phone.touched)">*Số điện thoại phải từ 10 hoặc 11 số</p>
                             <div class="column">
                                 <label style="font-size: 20px">Số điện thoại <label style="color: red">*</label></label>
                                 <span><input type="string" #phone formControlName="phone"></span>
@@ -51,15 +51,15 @@
                     </div>
 
                     <div class="column-right">
-                        <p *ngIf="(!form.controls['email'].valid) && (form.controls['email'].touched)"> {{titleAlert}}
+                        <p *ngIf="submitted && (!form.controls['email'].valid) && (form.controls['email'].touched)"> {{titleAlert}}
                             <div class="column">
                                 <label style="font-size: 20px">Email <label style="color: red">*</label></label>
                                 <span><input type="email" name="email" #email formControlName="email"></span>
                             </div><br>
-                            <p *ngIf="(!form.controls['atmNumber'].valid) && (form.controls['atmNumber'].touched)"> {{titleAlert}}
+                            <p *ngIf="submitted && (!form.controls['atmNumber'].valid) && (form.controls['atmNumber'].touched)"> {{titleAlert}}
                                 <div class="column">
-                                    <label style="font-size: 20px">Số thẻ tài khoản<br>
-                                             ngân hàng <label style="color: red">*</label></label>
+                                    <label style="font-size: 20px">Số tài khoản
+                                              <label style="color: red">*</label></label>
                                     <span><input type="text" #atm_number formControlName="atmNumber"></span>
                                 </div><br>
                                 <p style="font-size: 18px" *ngIf="(!form.controls['address'].valid) && (form.controls['address'].touched)"> {{titleAlert}}
@@ -73,11 +73,13 @@
 
                 <div class="button">
                     <!--Link trang nhưng không tải lại trang-->
-
+                    <button style="background-color: rgb(160, 105, 34);     margin-right: 50px;" id="add" (click)="onResetForm()">Reset</button>
                     <button id="ignore" [routerLink]="['/login']">Hủy </button>
-                    <button id="add">Đăng ký</button>
+                    <button type="submit" class="btn btn-primary" id="add">Đăng ký</button>
 
                 </div>
+
+
 
             </form>
         </div>

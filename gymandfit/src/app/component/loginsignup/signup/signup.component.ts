@@ -18,6 +18,7 @@ import {
 
 
 export class SignupComponent implements OnInit {
+submitted = false;
 //validate
 form: FormGroup;
 name: string;
@@ -48,4 +49,18 @@ constructor(
 ngOnInit() {
 
 }
+onSubmit() {
+  this.submitted = true;
+  // stop here if form is invalid
+  if (this.form.invalid) {
+    return;
+}
+
+alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value))
+
+}
+onResetForm(){
+  this.form.reset();
+}
+
 }

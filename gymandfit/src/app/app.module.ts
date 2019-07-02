@@ -9,6 +9,7 @@ import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/loginsignup/login/login.component';
 import { SignupComponent } from './component/loginsignup/signup/signup.component';
+import { ForgotpassComponent } from './component/loginsignup/forgotpass/forgotpass.component';
 
 
 const appRoutes: Routes = [
@@ -25,12 +26,17 @@ const appRoutes: Routes = [
 path : 'signup',
 component : SignupComponent,
   },
+  {
+    path : 'forgot',
+    component : ForgotpassComponent,
+      },
 ]
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ForgotpassComponent
   ],
   imports: [
     BrowserModule,
