@@ -10,40 +10,30 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './component/loginsignup/login/login.component';
 import { SignupComponent } from './component/loginsignup/signup/signup.component';
 import { ForgotpassComponent } from './component/loginsignup/forgotpass/forgotpass.component';
-import { HomePageComponent } from './component/home-page/home-page.component';
+import { HomepageComponent } from './component/homepage/homepage.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { ScheduleComponent } from './component/schedule/schedule.component';
+import { ShopComponent } from './component/shop/shop.component';
+import { ProductdetailComponent } from './component/shop/productdetail/productdetail.component';
+import { ShoppingCartComponent } from './component/shop/shopping-cart/shopping-cart.component';
+import { appRoutes } from './routers';
+  import { from } from 'rxjs';
 
 
-const appRoutes: Routes = [
-  {
-    path : '',
-    component:  HomePageComponent,
-  },
-  
-  {
-    path : 'login',
-    component : LoginComponent,
-
-  },
-  {
-path : 'signup',
-component : SignupComponent,
-  },
-  {
-    path : 'forgot',
-    component : ForgotpassComponent,
-      },
-  {
-    path : '/homepage',
-    component : HomePageComponent,
-          },
-]
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     ForgotpassComponent,
-    HomePageComponent
+    HomepageComponent,
+    NavbarComponent,
+   
+    ScheduleComponent,
+    ShopComponent,
+    ProductdetailComponent,
+   
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
