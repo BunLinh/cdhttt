@@ -5,45 +5,51 @@ import { RouterModule, Router, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms'
 
 import { AppRoutingModule} from './app-routing.module';
+//service
+import{ScheduleService} from './services/schedule.service'
 // component
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/loginsignup/login/login.component';
 import { SignupComponent } from './component/loginsignup/signup/signup.component';
 import { ForgotpassComponent } from './component/loginsignup/forgotpass/forgotpass.component';
-import { HomePageComponent } from './component/home-page/home-page.component';
+import { HomepageComponent } from './component/homepage/homepage.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
+//schedule
+import { ScheduleComponent } from './component/schedule/schedule.component';
+import { ScheduleDetailComponent } from './component/schedule/schedule-detail/schedule-detail.component';
+import { ListScheduleComponent } from './component/schedule/list-schedule/list-schedule.component';
 
-const appRoutes: Routes = [
-  {
-    path : '',
-    component:  HomePageComponent,
-  },
+import { ShopComponent } from './component/shop/shop.component';
+import { ProductdetailComponent } from './component/shop/productdetail/productdetail.component';
+import { ShoppingCartComponent } from './component/shop/shopping-cart/shopping-cart.component';
+import { appRoutes } from './routers';
+import { ProductListComponent } from './component/shop/product-list/product-list.component';
   
-  {
-    path : 'login',
-    component : LoginComponent,
 
-  },
-  {
-path : 'signup',
-component : SignupComponent,
-  },
-  {
-    path : 'forgot',
-    component : ForgotpassComponent,
-      },
-  {
-    path : '/homepage',
-    component : HomePageComponent,
-          },
-]
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     ForgotpassComponent,
-    HomePageComponent
+    HomepageComponent,
+    NavbarComponent,
+   
+    ScheduleComponent,
+    ScheduleDetailComponent,
+    ListScheduleComponent,
+
+    ShopComponent,
+    ProductdetailComponent,
+   
+    ShoppingCartComponent,
+   
+    ProductListComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
@@ -52,7 +58,7 @@ component : SignupComponent,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ScheduleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
