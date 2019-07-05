@@ -27,10 +27,10 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="col-md-6 ">
+                <div class="col-md-6 " style=" margin-left: 150px;">
                     <tr *ngFor="let item of schedules" [routerLink]="['/schedules',item.id]">
                         <div class="sched d-block d-lg-flex">
-                            <div class="bg-image order-2" style="background-image: url('{{item.img}}');"></div>
+                            <div class="bg-image order-2" [ngStyle]="{'background-image':  'url(' +item.img + ')'}"></div>
                             <!-- '../../../../assets/img/img/gym4.jpg' -->
                             <div class="text order-1">
                                 <h3>
@@ -43,7 +43,7 @@
                                     <br>
                                 </p>
                                 <p>
-                                    <a href="/Fontend/schedule/schedule_detail.jsp?courseID=<%=list.get(0).getCourseID() %>" class="btn btn-primary btn-sm">Join from {{item.price | currency: 'VND' : true}}vnd</a>
+                                    <a class="btn btn-primary btn-sm">Join from {{item.price | currency: 'VND' : true}}vnd</a>
                                 </p>
 
                             </div>

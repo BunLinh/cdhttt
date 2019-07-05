@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms'
 import { AppRoutingModule} from './app-routing.module';
 //service
 import{ScheduleService} from './services/schedule.service'
+import{ProductService} from './services/product.service'
 // component
 import { AppComponent } from './app.component';
 import { LoginComponent } from './component/loginsignup/login/login.component';
@@ -23,9 +24,11 @@ import { ListScheduleComponent } from './component/schedule/list-schedule/list-s
 import { ShopComponent } from './component/shop/shop.component';
 import { ProductdetailComponent } from './component/shop/productdetail/productdetail.component';
 import { ShoppingCartComponent } from './component/shop/shopping-cart/shopping-cart.component';
-import { appRoutes } from './routers';
 import { ProductListComponent } from './component/shop/product-list/product-list.component';
-  
+
+//router
+import { appRoutes } from './routers';
+import { AdminComponent } from './component/admin/admin.component';
 
 
 
@@ -49,6 +52,8 @@ import { ProductListComponent } from './component/shop/product-list/product-list
    
     ProductListComponent,
    
+    AdminComponent,
+   
     
   ],
   imports: [
@@ -58,7 +63,7 @@ import { ProductListComponent } from './component/shop/product-list/product-list
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ScheduleService],
+  providers: [ScheduleService,ProductService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
