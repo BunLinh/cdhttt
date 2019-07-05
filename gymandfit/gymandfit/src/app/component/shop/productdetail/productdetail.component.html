@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Schedule_Detail</title>
+</head>
+
+<body>
+    <app-navbar></app-navbar>
+    <div class="clearfix mb-5 pb-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center heading-wrap">
+
+                    <span style="margin-top: 30px;" class="back-text-dark">Product Detail</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <table style="margin-left:140px; margin-top:350px;width: 1000px;" class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Tên sản phẩm </th>
+                <th scope="col">Hình ảnh</th>
+                <th scope="col">Tiền</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngIf="product ;else noProduct">
+                <th scope="row">{{product.name}}</th>
+                <th>{{product.img}}</th>
+                <td>{{product.price}}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+    <button style="margin-left: 500px; margin-top: 50px;" type="button" class="btn btn-primary" value="register">Đăng ký</button>
+    <button style="margin-left: 40px; margin-top: 50px;" type="button" class="btn btn-warning" (click)="onBackToList() " value=" cancel ">Hủy</button>
+    <!-- <button style=" margin-top: 50px; " type="button " class="btn btn-default " (click)="onBackToList() ">Back To List</button> -->
+    <ng-template #noProduct>
+        <h1>
+            This product has been deleted
+        </h1>
+    </ng-template>
+</body>
+
+</html>
