@@ -1272,10 +1272,9 @@ pre code {
     }
     .col-md-6 {
         -webkit-box-flex: 0;
-        margin-left: 150px;
-        -ms-flex: 0 0 250%;
-        flex: 0 0 250%;
-        max-width: 250%
+        -ms-flex: 0 0 50%;
+        /* flex: 0 0 50%; */
+        max-width: 100%;
     }
     .col-md-7 {
         -webkit-box-flex: 0;

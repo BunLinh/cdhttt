@@ -6,7 +6,7 @@ import {Product} from '../model/product.class'
 })
 export class ProductService {
   public products : Product []=[
-    {id : 1, name: 'Quan bagy', price :200000, img:'assets/img/img/sp1.jpg' } ,
+    {id : 1, name: 'Áo Socket Hamar', price :200000, img:'assets/img/img/sp1.jpg' } ,
     {id : 2, name: 'Ao cogri', price :100000, img:'assets/img/img/sp2.jpg' } ,
     {id : 3, name: 'Baby s', price :150000, img:'assets/img/img/sp3.jpg' } ,
     {id : 4, name: 'Gym master', price :50000, img:'assets/img/img/sp4.jpg' } ,
@@ -14,6 +14,9 @@ export class ProductService {
     {id : 6, name: 'Scai', price :500000, img:'assets/img/img/sp6.jpg' } ,
  
      ]
+
+
+     public cart : Product[]=[];
   constructor() { 
    
 
@@ -33,4 +36,17 @@ export class ProductService {
       return result;
     
   }
+  //kiểm tra product có trong bảng chưa
+  // checkProductInCart(id : number) : boolean{
+
+  // }
+
+  addToCart(id : number){
+  // let check : boolean =  this.checkProductInCart(id) ;
+    let result= null;
+    for(var i=0; i<this.products.length;i++){
+      if(this.products[i].id==id){
+       
+      }
+  }}
 }

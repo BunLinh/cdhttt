@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -13,7 +13,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.http.get('/xch/users/course?page=1&size=10').subscribe( r =>  {
+      console.log(r);
+    })
+   }
 
   ngOnInit() {
   }

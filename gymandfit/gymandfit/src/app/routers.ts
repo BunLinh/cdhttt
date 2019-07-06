@@ -18,6 +18,8 @@ import { ShopComponent } from './component/shop/shop.component';
 import { ProductdetailComponent } from './component/shop/productdetail/productdetail.component';
 import { ShoppingCartComponent } from './component/shop/shopping-cart/shopping-cart.component';
 
+import { AdminComponent } from './component/admin/admin.component';
+
 export const appRoutes: Routes = [
     {
       path : '',
@@ -59,10 +61,16 @@ export const appRoutes: Routes = [
           path: ':id',
          component : ProductdetailComponent,
         },
+        
        ]
       },
         
-        
+      { 
+        path: 'cart',
+       component : ShoppingCartComponent,
+      },
+      
+
     
       { path : 'schedules',
        component : ScheduleComponent ,
@@ -81,5 +89,15 @@ export const appRoutes: Routes = [
           path: ':id',
          component : ScheduleDetailComponent,
         },
+
+       
+         
       ],
-      }]
+     
+      },
+      { 
+        path: 'admin',
+       component : AdminComponent,
+      },
+    
+    ]

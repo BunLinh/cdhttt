@@ -28,7 +28,8 @@ import { ProductListComponent } from './component/shop/product-list/product-list
 
 //router
 import { appRoutes } from './routers';
-
+import { AdminComponent } from './component/admin/admin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -51,12 +52,15 @@ import { appRoutes } from './routers';
    
     ProductListComponent,
    
+    AdminComponent,
+   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],

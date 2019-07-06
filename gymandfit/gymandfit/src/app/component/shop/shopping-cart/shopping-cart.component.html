@@ -1,1 +1,247 @@
-<p>shopping-cart works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <app-navbar></app-navbar>
+    <aside style=" margin-top: 100px;" id="colorlib-hero" class="breadcrumbs">
+        <div class="flexslider">
+            <ul class="slides">
+                <li style="background-image: url(assets/img/img/shop.jpg); ">
+                    <div class="overlay"></div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text" style="margin-left: 515px;">
+                                <div class=" slider-text-inner text-center">
+                                    <h1>Products</h1>
+                                    <h2 class=" bread ">
+                                        <span><a [routerLink]="[''] ">Home</a></span> <span><a
+                                                        [routerLink]="['/shop']">Shop</a></span>
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="colorlib-shop">
+        <div class="container" style="margin-left: 185px;">
+            <div class="row row-pb-md">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="process-wrap">
+                        <div class="process text-center active">
+                            <p>
+                                <span>01</span>
+                            </p>
+                            <h3>Shopping Cart</h3>
+                        </div>
+                        <div class="process text-center">
+                            <p>
+                                <span>02</span>
+                            </p>
+                            <h3>Checkout</h3>
+                        </div>
+                        <div class="process text-center">
+                            <p>
+                                <span>03</span>
+                            </p>
+                            <h3>Order Complete</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row row-pb-md">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="product-name">
+                        <div class="one-forth text-center">
+                            <span>Product Details</span>
+                        </div>
+                        <div class="one-eight text-center">
+                            <span>Price</span>
+                        </div>
+                        <div class="one-eight text-center">
+                            <span>Quantity</span>
+                        </div>
+                        <div class="one-eight text-center">
+                            <span>Total</span>
+                        </div>
+                        <div class="one-eight text-center">
+                            <span>Remove</span>
+                        </div>
+                    </div>
+                    <!-- phần product cart -->
+
+                    <!-- <%
+                        for(int i= 0; i<cart.size();i++){
+                            int sum=0;
+                            
+                            %> -->
+
+                    <div class="product-cart">
+                        <div class="one-forth">
+                            <div class="product-img">
+
+                                <img style="width: 100px; height: 100px;" src="">
+                            </div>
+                            <div class="display-tc">
+                                <h3>
+                                    <!-- <%out.print(cart.get(i).getName());%> -->
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="one-eight text-center">
+                            <div class="display-tc">
+                                <span class="price">
+                                    VND</span>
+                            </div>
+                        </div>
+                        <div class="one-eight text-center">
+                            <div class="display-tc">
+                                <input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1">
+                            </div>
+                        </div>
+
+                        <div class="one-eight text-center">
+                            <div class="display-tc">
+                                <!-- <% sum+=cart.get(i).getPrice();%> -->
+                                <span class="price">
+                                    <!-- <%=sum%> -->
+                                </span>
+                            </div>
+                        </div>
+                        <div class="one-eight text-center">
+                            <div class="display-tc">
+                                <a href="" class="closed"></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <%
+                        total+=cart.get(i).getPrice();
+                        }
+                    %> -->
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="total-wrap">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <form>
+                                    <div class="row form-group">
+                                        <div class="col-md-9">
+                                            <input type="text" name="quantity" class="form-control input-number" placeholder="Your Coupon Number...">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="submit" value="Apply Coupon" class="btn btn-primary">
+                                        </div>
+                                        <a [routerLink]="['/login']"> <button style="margin-top: 50px; margin-left: 300px;" type="button" class="btn btn-info">Tiếp tục</button>
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-3 col-md-push-1 text-center">
+                                <div class="total">
+                                    <div class="sub">
+                                        <p>
+                                            <span>Subtotal:</span> <span>20000</span>
+                                        </p>
+                                        <p>
+                                            <span>Delivery:</span> <span>0</span>
+                                        </p>
+                                        <p>
+                                            <span>Discount:</span> <span>0</span>
+                                        </p>
+                                    </div>
+                                    <div class="grand-total">
+                                        <p>
+                                            <span><strong>Total:</strong></span> <span>
+                                                <!-- <%=total %> -->
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="colorlib-shop">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
+                    <h2>
+                        <span>Similar Products</span>
+                    </h2>
+                    <p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 80px;">
+                <!-- <%
+                    Product_DAO productDAO = new Product_DAO();
+                    ResultSet rs1 = productDAO.loadProduct();
+                    while (rs1.next()) {
+                        if (Integer.parseInt(rs1.getString(1)) < 5) {
+                %> -->
+                <tr *ngFor="let i  of products " [routerLink]="[ '/shop',i.id] ">
+                    <div class="col-md-3 text-center">
+                        <div class="product-entry">
+                            <div class="product-img">
+                                <img style="width: 280px; height: 350px;" src="{{i.img}}">
+                                <p class="tag">
+                                    <span class="new">New</span>
+                                </p>
+                                <div class="cart">
+                                    <p>
+                                        <span class="addtocart ">
+                                                    <a href=" ">
+                                                <i class="glyphicon glyphicon-shopping-cart "></i></a></span>
+                                        <span><a [routerLink]="[ '/shop',i.id] "><i class="glyphicon glyphicon-eye-open "></i></a></span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <h3>
+                                    <p style="font-size: 15px;" class="price ">{{i.price | currency: 'VND' : true}}vnd
+
+
+
+                                        <button type="button " class="btn btn-default btn-sm ">
+                                                        <span class="glyphicon glyphicon-shopping-cart ">Buy</span> 
+                                                  </button>
+                                    </p>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </tr>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

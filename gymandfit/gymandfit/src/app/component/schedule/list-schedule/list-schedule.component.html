@@ -27,7 +27,7 @@
         <div class="container">
 
             <div class="row no-gutters">
-                <div class="col-md-6 ">
+                <div class="col-md-6 " style=" margin-left: 150px;">
                     <tr *ngFor="let item of schedules" [routerLink]="['/schedules',item.id]">
                         <div class="sched d-block d-lg-flex">
                             <div class="bg-image order-2" [ngStyle]="{'background-image':  'url(' +item.img + ')'}"></div>

@@ -11,7 +11,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./productdetail.component.css','../../../../assets/css/animate.css',
   '../../../../assets/css/owl.carousel.min.css',
   '../../../../assets/css/magnific-popup.css',
-  '../../../../assets/css/bootstrap.css',]
+  '../../../../assets/css/bootstrap.css',
+  '../../../../assets/css/icomoon.css',]
 })
 export class ProductdetailComponent implements OnInit, OnDestroy {
 
@@ -41,4 +42,18 @@ export class ProductdetailComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
+  //quay tro lai trang list
+onBackToList(){
+  // this.routerService.navigate(['schedules/list']);
+  this.routerService.navigate(['list'],
+  { relativeTo : this.activateRoute.parent
+
+  }
+  );
+
+}
+onAddToCart(){
+  
+
+}
 }
